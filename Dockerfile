@@ -32,4 +32,4 @@ RUN \
 COPY --from=builder /root/secor/version /home/secor/.
 COPY run.sh /home/secor/.
 USER secor
-CMD ["run.sh"]
+CMD ["/home/secor/run.sh"]
