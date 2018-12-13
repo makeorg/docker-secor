@@ -13,5 +13,5 @@ done
 java -Xmx${JVM_MEMORY:-512m} -ea \
   -Dlog4j.configuration=log4j.docker.properties \
   -Dconfig=secor.current.properties \
-  -cp secor-*.jar:lib/* \
+  -cp secor.jar:lib/* \
   com.pinterest.secor.main.ConsumerMain
