@@ -6,7 +6,7 @@ for config in $(env | grep '^SECOR'); do
   var=$(echo $config | cut -f1 -d'=')
   value=$(echo $config | cut -f2 -d'=')
   # convert SECOR_property_complete__name to property.complete_name
-  key=$(cat var | sed 's/^SECOR_//g' | tr '_' '.' | sed 's/\.\./_/g')
+  key=$(echo $var | sed 's/^SECOR_//g' | tr '_' '.' | sed 's/\.\./_/g')
   echo "$key=$value" >> secor.current.properties
 done
 
