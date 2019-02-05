@@ -10,7 +10,7 @@ for config in $(env | grep '^SECOR'); do
   properties="$properties -D$key=$value"
 done
 
-java -Xmx${JVM_MEMORY:-512m} -ea \
+exec java -Xmx${JVM_MEMORY:-512m} -ea \
   -Dlog4j.configuration=log4j.docker.properties \
   -Dconfig=secor.prod.partition.properties \
   $properties \
